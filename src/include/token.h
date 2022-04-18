@@ -1,5 +1,5 @@
-#ifndef TAC_TOKEN_H
-#define TAC_TOKEN_H
+#ifndef LOL_TOKEN_H
+#define LOL_TOKEN_H
 
 typedef struct TOKEN_STRUCT {
     char* value;
