@@ -13,6 +13,7 @@ typedef struct LEXER_STRUCT {
 } lexer_t;
 
 lexer_t* init_lexer(char* src);
+void lexer_print_lexemes(lexer_t*);
 
 void lexer_advance(lexer_t*);
 void lexer_skip_whitespace(lexer_t*);

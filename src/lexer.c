@@ -12,6 +12,14 @@ lexer_t* init_lexer(char* src) {
     return lexer;
 }
 
+/** PRINT TOKENS **/
+void lexer_print_lexemes(lexer_t* lexer) {
+  token_t* token = 0;
+  while((token = lexer_next(lexer))->type != TOKEN_EOF) {
+    printf("[Token `%s`: %s]\n", token->value, token_type_to_str(token));
+  }
+}
+
 // ADVANCING LEXER
 
 void lexer_skip_whitespace(lexer_t* lexer) {
@@ -80,7 +88,9 @@ token_t* lexer_parse_id(lexer_t* lexer) {
     value = strcat(value, (char[]){lexer->c, 0});
     lexer_advance(lexer);
   }
-  return init_token(value, TOKEN_ID) ;
+
+  if(strcmp(value, "has") == 0) return init_token(value, TOKEN_KEYWORD_HAS); 
+  return init_token(value, TOKEN_ID);
 }
 
 token_t* lexer_parse_number(lexer_t* lexer) {

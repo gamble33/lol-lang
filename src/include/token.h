@@ -1,9 +1,7 @@
 #ifndef LOL_TOKEN_H
 #define LOL_TOKEN_H
 
-typedef struct TOKEN_STRUCT {
-    char* value;
-    enum {
+typedef enum TOKEN_TYPE_ENUM {
 
         // Identifier
         TOKEN_ID,
@@ -14,14 +12,20 @@ typedef struct TOKEN_STRUCT {
         // Symbols
         TOKEN_QUESTION_MARK,
         TOKEN_PERIOD,
-        TOKEN_KEYWORD,
+
+        // Keywords
+        TOKEN_KEYWORD_HAS,
 
         TOKEN_EOF,
-        
-    } type;
+
+} token_type_t;
+
+typedef struct TOKEN_STRUCT {
+    char* value;
+    token_type_t type;
 } token_t;
 
-token_t* init_token(char* value, int type);
+token_t* init_token(char* value, token_type_t type);
 char* token_type_to_str(token_t*);
 
 #endif
