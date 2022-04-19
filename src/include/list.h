@@ -12,5 +12,6 @@ typedef struct LIST_STRUCT {
 list_t* init_list(size_t item_size);
 
 void list_push(list_t*, void* item);
+void* list_get(list_t*, size_t index);
 
 #endif

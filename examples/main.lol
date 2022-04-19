@@ -1,4 +1,4 @@
 john has 2.
 eda has 3.
-dump john.
-dump eda.
+summarize john.
+summarize eda.

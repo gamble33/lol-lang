@@ -8,8 +8,8 @@ token_t* init_token(char* value, token_type_t type) {
     return token;
 }
 
-char* token_type_to_str(token_t* token) {
-  switch(token->type) {
+char* token_type_to_str(token_type_t type) {
+  switch(type) {
         case                TOKEN_ID: return "TOKEN_ID";
         case       TOKEN_INT_LITERAL: return "TOKEN_INT_LITERAL";
         case     TOKEN_QUESTION_MARK: return "TOKEN_QUESTION_MARK";

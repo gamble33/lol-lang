@@ -10,11 +10,15 @@ list_t* init_list(size_t item_size) {
 
 void list_push(list_t* list, void* item) {
   list->size += 1;
-  if(!list->items) {
-    list->items = calloc(1, list->size);
+  if(list->items == 0) {
+    list->items = calloc(1, list->item_size);
   } else {
     list->items = realloc(list->items, list->size * list->item_size);
   }
 
-  list->items[list->size] = item;
+  list->items[list->size - 1] = item;
+}
+
+void* list_get(list_t* list, size_t index) {
+  return list->items[index];
 }

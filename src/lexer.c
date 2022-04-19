@@ -18,6 +18,7 @@ void lexer_print_lexemes(lexer_t* lexer) {
   while((token = lexer_next(lexer))->type != TOKEN_EOF) {
     printf("[Token `%s`: %s]\n", token->value, token_type_to_str(token));
   }
+  printf("[Token `%s`: %s]\n", token->value, token_type_to_str(token));
 }
 
 // ADVANCING LEXER
@@ -72,7 +73,7 @@ token_t* lexer_next(lexer_t* lexer){
       case '\0': break;
       default: {
         // TODO: HANDLE UNKOWN SYMBOL CASE
-        printf("Unexpected Token: %c\n", lexer->c);
+        printf("Unexpected character: %c\n", lexer->c);
         exit(1);
         break;
       }

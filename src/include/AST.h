@@ -10,6 +10,7 @@ typedef enum AST_TYPE_ENUM {
     AST_VARIABLE,
     AST_ASSIGNMENT,
     AST_INT,
+    AST_SUMMARIZE,
  } AST_type_t;
 
 typedef struct AST_STRUCT {
