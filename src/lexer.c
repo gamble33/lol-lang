@@ -16,9 +16,9 @@ lexer_t* init_lexer(char* src) {
 void lexer_print_lexemes(lexer_t* lexer) {
   token_t* token = 0;
   while((token = lexer_next(lexer))->type != TOKEN_EOF) {
-    printf("[Token `%s`: %s]\n", token->value, token_type_to_str(token));
+    printf("[Token `%s`: %s]\n", token->value, token_type_to_str(token->type));
   }
-  printf("[Token `%s`: %s]\n", token->value, token_type_to_str(token));
+  printf("[Token `%s`: %s]\n", token->value, token_type_to_str(token->type));
 }
 
 // ADVANCING LEXER
